@@ -35,7 +35,7 @@ class mcollective::server::config::factsource::yaml (
       }
       exec { 'create-mcollective-metadata':
         path    => "/opt/puppet/bin:/opt/puppetlabs/bin:${::path}",
-        command => "facter -p --yaml >${yaml_fact_path_real} 2>&1",
+        command => "facter -y >${yaml_fact_path_real} 2>&1",
         creates => $yaml_fact_path_real,
       }
     } else {
